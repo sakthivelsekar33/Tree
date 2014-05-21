@@ -32,6 +32,17 @@ class BinarySearchTree
 		end
 	end
 
-	def delete data
+	def in_order_traversal(node = @root)
+		return if node.nil?
+		in_order_traversal(node.left_node)
+		puts node.value
+		in_order_traversal(node.right_node)
+	end
+
+	def post_order_traversal(node = @root)
+		return if node.nil?
+		in_order_traversal(node.left_node)
+		in_order_traversal(node.right_node)
+		puts node.value
 	end
 end
